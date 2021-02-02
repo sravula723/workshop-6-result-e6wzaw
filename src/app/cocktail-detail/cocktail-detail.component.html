@@ -1,0 +1,52 @@
+<mat-toolbar class="toolbar">
+  <div class="max-grow"></div>
+  <div>
+    <h1 class="mat-display-3 cocktail-title">
+      {{ cocktail.title }}
+    </h1>
+  </div>
+  <div class="max-grow"></div>
+</mat-toolbar>
+
+<div class="cocktail-detail">
+  <div class="box">
+    <div class="img-flex">
+      <img
+        mat-card-image
+        [src]="cocktail.img"
+        alt="Image of a Cocktail"
+        class="cocktail-img"
+      />
+      <mat-list class="ingredient-list">
+        <mat-list-item
+          *ngFor="let ingredient of cocktail.ingredients; last as last"
+        >
+          {{ ingredient | unit }}
+          <mat-divider *ngIf="!last"></mat-divider>
+        </mat-list-item>
+      </mat-list>
+    </div>
+    <div class="instructions">
+      <p>{{ cocktail.instructions }}</p>
+    </div>
+    <mat-form-field appearance="outline" class="num-cocktails">
+      <mat-label>Number Of Cocktails</mat-label>
+      <input
+        matInput
+        min="1"
+        type="number"
+        [(ngModel)]="amountCocktails"
+        (change)="amount()"
+      />
+    </mat-form-field>
+  </div>
+
+  <button
+    mat-raised-button
+    color="primary"
+    [routerLink]="['/']"
+    class="overview-button"
+  >
+    Overview
+  </button>
+</div>

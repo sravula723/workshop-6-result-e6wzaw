@@ -1,0 +1,22 @@
+.main-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-content: stretch;
+}
+
+.search-form {
+  font-size: 0.7em;
+  margin: 0 13px 0 5px;
+  margin-top: 20px;
+  min-width: 40vw;
+}
+
+.max-grow {
+  display: flex;
+  flex-grow: 1;
+}
+
+.toolbar {
+  min-height: 100px;
+}
